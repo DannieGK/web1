@@ -2,9 +2,33 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>javascript : change skin mode</title>
+    <script type="text/javascript">
+      function changeButtonsClass(cla,val){
+        var buttons=document.querySelectorAll(cla);
+        for(var i=0; i < buttons.length ; i++){
+          buttons[i].value=val;
+        }
+      }
+      function changeSkinMode(self){
+        var target=document.querySelector('body').style
+        if(self.value=='day'){
+          target.backgroundColor='black';
+          target.color='white';
+          changeButtonsClass('.light','night');
+        }else{
+          target.backgroundColor='white';
+          target.color='black';
+          changeButtonsClass('.light','day');
+        }
+      }
+    </script>
   </head>
-  <body>
-    <input type="button" name="" value="">
+  <body style="background-Color:white;color:black;">
+    <input type="button" class="light" name="" value="day" onclick="changeSkinMode(this);"><br>
+    <input type="button" class="light" name="" value="day" onclick="changeSkinMode(this);"><br>
+    <input type="button" class="light" name="" value="day" onclick="changeSkinMode(this);"><br>
+    <input type="button" class="light" name="" value="day" onclick="changeSkinMode(this);"><br>
+    <input type="button" class="light" name="" value="day" onclick="changeSkinMode(this);"><br>
   </body>
 </html>
