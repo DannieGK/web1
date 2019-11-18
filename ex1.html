@@ -1,12 +1,245 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
-  </head>
-  <body>
+    <style media="screen">
+        .js{
+          font-weight:bold;
+          color:red;
+        }
+        #first{
+          color:green;
+        }
+        span{
+          color:blue;
+        }
+        div{
+          margin-top:20px;
+        }
+        h1{
+          color:red;
+        }
+    </style>
     <script type="text/javascript">
-      
+      function calculator(left,right){
+        return left+right;
+      }
+      function changeLinkColor(color){
+        var alist=document.querySelectorAll('a');
+        var i=0;
+        while(i<alist.length){
+          alist[i].style.color='powderblue';
+          i++;
+        }
+      }
+      function changeColor(font, bg){
+        var target=document.querySelector('body').style;
+        target.color='white';
+        target.backgroundColor='black';
+      }
+      function nightDayHandler(self){
+        if(self.value==='night'){
+          self.value='day';
+          changeColor('white','black');
+          changeLinkColor('powderblue');
+        }else{
+          self.value='night';
+          changeColor('black','white');
+          changeLinkColor('blue');
+        }
+      }
     </script>
+  </head>
+  <body style="background-color:white;color:black;">
+
+    <h1><a href="index.html">WEB</a></h1>
+    <ol>
+      <li><a href="index.html">html</a></li>
+      <li>css</li>
+      <li><a href="ex1.html">JavaScript</a></li>
+    </ol>
+
+    <h1>JavaScript와 Html의 차이점</h1>
+    <script type="text/javascript">
+      document.write(1+1);
+    </script>
+    <h2>1+1</h2>
+
+    <h1>이벤트 테스트</h1>
+    <input type="button" name="" value="클릭시 경고창이 뜹니다." onclick="alert('hi')">
+    <input type="text" name="" value="" onchange="alert('입력내용이 변경되었습니다.')">
+
+    <div class="onkeydown_event">
+      <input type="text" name="" value="" onkeydown="alert('입력했음')">
+      <input type="button" name="" value="검색">
+    </div>
+
+    <div class="css">
+      <h2 style="color:powderblue;background-color:coral">color:powderblue ; background-color:coral</h2>
+      <span id="first">클래스 이름이 js인 모든 영역에 스타일적용.</span>
+      <span id="first" class="js">class는 그룹핑(반), id는 식별자(학번).. <br>우선순위: id선택자 > class선택자 > 태그선택자</span>
+      <span>일반 스팬스타일 적용</span>
+    </div>
+
+    <div class="change_color_mode">
+      <input type="button" name="" value="night" style="width:200px" onclick="document.querySelector('body').style.backgroundColor='black';document.querySelector('body').style.color='white';">
+      <input type="button" name="" value="day" style="width:200px" onclick="document.querySelector('body').style.backgroundColor='white';document.querySelector('body').style.color='black';">
+    </div>
+
+    <div>
+      시간의 흐름에 따라 음악이 연주되는 순서를 program이라고 했음. PROGRAM에는 '순서'라는 의미가 내포됨.<br><br>
+      <span>프로그래밍의 본질적 의미:</span> 시간의 순서에 따라 실행되어야 할 기능을 프로그래밍 언어 문법에 맞게 글로 적어두는 방식을 고안, 그리고 그 작업이 필요할 때 글을 컴퓨터에게 내밀면 컴퓨터가 작업을 수행한다.
+    </div>
+
+    <div class="toggle_button_test">
+      <input id="night_day" type="button" name="" value="night" onclick="nightDayHandler(this)
+      ">
+    </div>
+
+    <div class="">
+      <h1>comparison operators & Boolean</h1>
+      <h2>===</h2>
+      <h3>1===1</h3>
+      <script type="text/javascript">
+        document.write(1===1);
+      </script>
+
+      <h3>1===2</h3>
+      <script type="text/javascript">
+        document.write(1===2);
+      </script>
+
+      <h3>1&lt;2</h3>
+      <script type="text/javascript">
+        document.write(1<2);
+      </script>
+
+      <h3>2&gt;1</h3>
+      <script type="text/javascript">
+        document.write(2>1);
+      </script>
+    </div>
+
+    <div class="">
+
+      <h1>Conditional Statements</h1>
+
+      <h2>Programs</h2>
+      <script type="text/javascript">
+        document.write("1<br>");
+        document.write("2<br>");
+        document.write("3<br>");
+        document.write("4<br>");
+      </script>
+
+      <h2>IF-true</h2>
+      <script type="text/javascript">
+        document.write("1<br>");
+        if(true){
+          document.write("2<br>");
+        }else{
+          document.write("3<br>");
+        }
+        document.write("4<br>");
+      </script>
+
+      <h2>IF-false</h2>
+      <script type="text/javascript">
+        document.write("1<br>");
+        if(false){
+          document.write("2<br>");
+        }else{
+          document.write("3<br>");
+        }
+        document.write("4<br>");
+      </script>
+    </div>
+
+    <div class="toggle_button_test">
+      <input id="night_day" type="button" name="" value="night" onclick="nightDayHandler(this);">
+    </div>
+
+    <div class="">
+      <h1>Array</h1>
+      <h2>Syntax</h2>
+      <script type="text/javascript">
+        var coworkers = ["jennie","ruby"];
+      </script>
+      <h2>get</h2>
+      <script type="text/javascript">
+        document.write(coworkers[0]);
+        document.write(coworkers[1]);
+        document.write(coworkers.length);
+      </script>
+      <h2>add</h2>
+      <script type="text/javascript">
+        coworkers.push("jane");
+        coworkers.pop("ruby");
+        document.write(coworkers.length);
+      </script>
+    </div>
+
+    <div class="">
+      <h1>Loop</h1>
+      <ul>
+        <script type="text/javascript">
+          document.write('<li>1</li>');
+          var i=0;
+          while(i<3){
+            document.write('<li>2</li>');
+            document.write('<li>3</li>');
+            i++;
+          }
+          document.write('<li>4</li>');
+        </script>
+      </ul>
+    </div>
+
+    <div class="">
+      <h1>배열에 담긴 이름 순서대로 출력</h1>
+      <ol>
+        <script type="text/javascript">
+          var coworkers = ["kim", "shin", "jung", "park"];
+          var i=0;
+          while(i<coworkers.length){
+            document.write('<li><a href="http://a.com/'+coworkers[i]+'">'+coworkers[i]+'</a></li>'); i++;
+          }
+          document.write('<div>'+calculator(10,10)+'</div>');
+          document.write('<div style="color:red">'+calculator(10,10)+'</div>');
+        </script>
+      </ol>
+    </div>
+
+    <div class="">
+      <h1>Object</h1>
+      <script type="text/javascript">
+        var coworkers = {
+          "programmer":"goeun",
+          "designer":"kim"
+        };
+        document.write("programmer : "+coworkers.programmer+"</br>");
+        document.write("designer : "+coworkers.designer+"</br>");
+        coworkers.bookeeper = "dannie";
+        coworkers["data scientist"] = "kimgoeun";
+        document.write("data scientist :"+coworkers["data scientist"]);
+      </script>
+      <h1>Object & Iterate</h1>
+      <script type="text/javascript">
+        for(var key in coworkers){
+          document.write(key+' : ' +coworkers[key]+'<br>');
+        }
+      </script>
+      <h1>Object's function</h1>
+      <script type="text/javascript">
+        coworkers.showAll = function(){
+          for(var key in this){
+          document.write(key+':'+this[key]+'<br>');
+          }
+        }
+        coworkers.showAll();
+      </script>
+    </div>
+
   </body>
 </html>
