@@ -35,15 +35,15 @@ var Switches = {
 }
 function changeSkinMode(self){
   var target=document.querySelector('body');
-  if(self.value=='day'){
+  if(self.value=='off'){
     Body.setColor('white');
     Body.setBackgroundColor('black');
-    Switches.setValue('night');
+    Switches.setValue('on');
     Links.setColor('grey');
   }else{
     Body.setColor('black');
     Body.setBackgroundColor('white');
-    Switches.setValue('day');
+    Switches.setValue('off');
     Links.setColor('red');
   }
 }
